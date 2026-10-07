@@ -13,6 +13,9 @@ Saves your **Accepted** LeetCode submissions in the extension and backs them up 
 
 ## Load it
 
+For end users, see [../INSTALL.md](../INSTALL.md) (download from GitHub Releases). For development:
+
+
 1. Open `chrome://extensions`.
 2. Turn on **Developer mode** (top right).
 3. Click **Load unpacked** and select this `extension/` folder.

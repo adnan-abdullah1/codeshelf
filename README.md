@@ -2,6 +2,8 @@
 
 Chrome extension (Manifest V3) that saves your **Accepted** LeetCode solutions and backs them up to your CodeShelf account (Supabase).
 
+**Install it:** follow [INSTALL.md](INSTALL.md).
+
 - [`extension/`](extension/) – the extension. Setup, how it works and configuration: [extension/README.md](extension/README.md).
 - [`supabase/`](supabase/) – database schema and access rules.
 - [`scripts/package.sh`](scripts/package.sh) – builds the Chrome Web Store zip into `dist/`.
