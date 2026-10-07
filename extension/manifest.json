@@ -1,0 +1,55 @@
+{
+  "manifest_version": 3,
+  "name": "CodeShelf",
+  "version": "1.0.0",
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAwNCardliIhYD4zg4e1TFykKof1aWaA6kZS/UZRjxT8IJNpGIGIXvE12BfM2P3yhd+L7S1T5aespp3zs0hr1vLS9mFL664JIF0vL24u73iHW7ugdxSQKeDMrI4S7/NmMvPSLfJagI+QlckkVnz8FoDqjK0Zw35rNzSKZtGr3eDbHiz4q+MzLPvIt2B51I9qBwpxs7UkL2C+k1JSa7mFf6ETbTFxs76TleYcUFevhTvrUEo1izGjW8YNuUB9hefySBxUHpWD6hIFP7L0t3ujCb5Uha2B9Rg6NUE2GSf6jUii0xktZ/qWuElOCxfvCgiVFh00/SwUE5MaJW0OKfTYVnWwIDAQAB",
+  "description": "Saves your Accepted LeetCode submissions and backs them up to your CodeShelf account.",
+  "minimum_chrome_version": "111",
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "action": {
+    "default_title": "CodeShelf \u2013 saved solutions",
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png",
+      "48": "icons/icon48.png"
+    }
+  },
+  "permissions": [
+    "storage",
+    "unlimitedStorage",
+    "identity"
+  ],
+  "host_permissions": [
+    "https://qgvnwztoiitphhdfroxd.supabase.co/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://leetcode.com/*"
+      ],
+      "js": [
+        "injected.js"
+      ],
+      "run_at": "document_start",
+      "world": "MAIN"
+    },
+    {
+      "matches": [
+        "https://leetcode.com/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_start"
+    }
+  ]
+}
